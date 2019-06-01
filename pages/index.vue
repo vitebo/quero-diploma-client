@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h1 class="title">Meus diplomas</h1>
-    <q-card-list :cards="cards" />
+    <q-card-list :courses="courses" />
   </div>
 </template>
 
@@ -15,7 +15,7 @@ export default {
   },
   data () {
     return {
-      cards: [
+      courses: [
         new Course('ADM', 'curso de administração 1', 'Unip'),
         new Course('ADM', 'curso de administração 2', 'Unip'),
         new Course('ADM', 'curso de administração 3', 'Unip'),

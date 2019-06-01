@@ -1,26 +1,28 @@
 <template>
   <section class="row">
-    <div class="col-4" v-for="card in cards">
-      <q-card :card="card" class="qcard" />
+    <div class="col-4" v-for="course in courses">
+      <b-card class="card" :title="course.name" :sub-title="course.university">
+        <b-card-text>
+          {{ course.description }}
+        </b-card-text>
+        <b-link href="#" class="card-link">Another link</b-link>
+      </b-card>
     </div>
   </section>
 </template>
 
 <script>
-import QCard from '~/components/QCard.vue';
-
 export default {
   components: {
-    QCard
   },
-  props: [ 'cards' ]
+  props: [ 'courses' ],
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '@/assets/scss/main.scss';
 
-.qcard {
+.card {
   margin-bottom: map-get($spacers, 3);
 }
 </style>

@@ -1,18 +1,13 @@
 <template>
-  <nav class="navbar navbar-light bg-light">
-    <logo />
-  </nav>
+  <q-header/>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import QHeader from '~/components/QHeader.vue';
 
 export default {
   components: {
-    Logo
+    QHeader
   }
 }
 </script>
-
-<style>
-</style>

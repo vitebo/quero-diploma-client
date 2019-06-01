@@ -1,6 +1,6 @@
 <template>
   <div>
-    <q-header/>
+    <q-header class="header"/>
     <main>
       <nuxt />
     </main>
@@ -9,6 +9,7 @@
 
 <script>
 import QHeader from '~/components/QHeader.vue';
+import '@/assets/scss/main.scss';
 
 export default {
   components: {
@@ -18,6 +19,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '~assets/scss/main.scss';
+
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -35,5 +38,9 @@ html {
 *:after {
   box-sizing: border-box;
   margin: 0;
+}
+
+.header {
+  margin-bottom: map-get($spacers, 4);
 }
 </style>

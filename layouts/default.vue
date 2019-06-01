@@ -1,8 +1,21 @@
 <template>
-  <main>
-    <nuxt />
-  </main>
+  <div>
+    <q-header/>
+    <main>
+      <nuxt />
+    </main>
+  </div>
 </template>
+
+<script>
+import QHeader from '~/components/QHeader.vue';
+
+export default {
+  components: {
+    QHeader
+  }
+}
+</script>
 
 <style lang="scss">
 html {

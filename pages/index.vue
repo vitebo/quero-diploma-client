@@ -1,13 +1,6 @@
 <template>
-  <q-header/>
+<p>bla</p> 
 </template>
 
 <script>
-import QHeader from '~/components/QHeader.vue';
-
-export default {
-  components: {
-    QHeader
-  }
-}
 </script>

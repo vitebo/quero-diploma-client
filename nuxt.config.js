@@ -38,7 +38,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    'plugins/bootstrap-vue.js'
+    'plugins/bootstrap-vue.js',
+    'plugins/vue-material.js'
   ],
 
   /*

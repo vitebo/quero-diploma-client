@@ -1,7 +1,7 @@
 <template>
   <a class="logo navbar-brand" href="#">
     <div class="logo">
-      Quero Diploma
+      Carteira <span class="logo__symbol">Edu</span>
     </div>
   </a>
 </template>
@@ -15,10 +15,18 @@ export default {
 @import '@/assets/scss/main.scss';
 
 .logo {
-  background-color: $primary-color;
-  color: #fff;
   display: inline-block;
-  padding: 4px 8px;
+  color: #3d9eae;
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+.logo__symbol {
+  background-color: #de9e1f;
+  border-radius: 4px;
+  color: #fff;
+  padding: map-get($spacers, 2);
+  font-weight: lighter;
 }
 
 </style>

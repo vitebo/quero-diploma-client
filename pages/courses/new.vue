@@ -4,7 +4,7 @@
     <form>
       <div class="form-group">
         <label>Universidades</label>
-        <md-autocomplete v-model="value" :md-options="institutions">
+        <md-autocomplete v-model="value" :md-options="institutions" >
           <template slot="md-autocomplete-item" slot-scope="{ item, term }">
             <div style="display: flex; align-items: center">
               <img :src="`${item.img}`" class="img">
@@ -141,6 +141,7 @@ export default {
 }
 
 .md-list-item {
+  transition: 250ms background-color 250ms;
 
   button {
     width: 100%;
@@ -150,6 +151,10 @@ export default {
     background-color: transparent;
     font-size: 1.4rem;
     padding: 8px;
+  }
+
+  &:hover {
+    background-color: #eee;
   }
 }
 

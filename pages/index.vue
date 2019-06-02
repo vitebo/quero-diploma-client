@@ -31,6 +31,8 @@ export default {
         }
       }
     );
+    this.courses = data;
+    console.log(data);
   }
 }
 </script>

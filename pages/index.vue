@@ -1,21 +1,16 @@
 <template>
   <main class="">
-    <header class="profile-header card">
-      <q-user />
-    </header>
     <q-card-list :courses="courses" />
   </main>
 </template>
 
 <script>
 import QCardList from '~/components/QCardList.vue';
-import QUser from '~/components/QUser.vue';
 import Course from '~/model/course';
 
 export default {
   components: {
     QCardList,
-    QUser
   },
   data () {
     return {

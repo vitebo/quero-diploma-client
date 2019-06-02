@@ -4,7 +4,15 @@
     <form>
       <div class="form-group">
         <label>Universidades</label>
-        <md-autocomplete v-model="value" :md-options="institutions">
+        <md-autocomplete
+          v-model="selectedInstitution"
+          @md-selected="onSelect"
+          :md-options="institutions.map(x=>({
+            'name':x.name,
+            'img':x.img,
+            'toLowerCase':()=>x.name.toLowerCase(),
+            'toString':()=>x.name
+          }))">
           <template slot="md-autocomplete-item" slot-scope="{ item, term }">
             <div style="display: flex; align-items: center">
               <img :src="`${item.img}`" class="img">
@@ -42,6 +50,7 @@
 <script>
 import ProfileService from '../../services/profile_service.js';
 import Courses from '~/services/courses.js';
+import Schools from '~/services/schools.js';
 
 export default {
   data () {
@@ -50,16 +59,14 @@ export default {
       selectedCourse: null,
       startDate: null,
       endDate: null,
-      institutions: [
-        {name: 'Unip', img: 'https://cdn.onlinewebfonts.com/svg/img_311846.png' },
-        {name: 'Estácio', img: 'https://cdn.onlinewebfonts.com/svg/img_311846.png' },
-        {name: 'Anhanguera', img: 'https://cdn.onlinewebfonts.com/svg/img_311846.png' },
-        {name: 'Unopar', img: 'https://cdn.onlinewebfonts.com/svg/img_311846.png' },
-      ],
+      institutions: Schools.schools(),
       courses: Courses.courses(),
     }
   },
   methods: {
+    onSelect(value) {
+      this.selectedInstitution = value.name;
+    },
     back () {
       this.$router.push('/');
     },

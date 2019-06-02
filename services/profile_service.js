@@ -19,6 +19,7 @@ export default {
   },
 
   createCertification(googleId, school, course) {
+    console.log(school);
     const url = this.buildCertificationUrl(googleId, school, course)
 
     axios.get(url)

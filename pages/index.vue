@@ -1,21 +1,16 @@
 <template>
   <main class="">
-    <header class="profile-header card">
-      <q-user />
-    </header>
     <q-card-list :courses="courses" />
   </main>
 </template>
 
 <script>
 import QCardList from '~/components/QCardList.vue';
-import QUser from '~/components/QUser.vue';
 import Course from '~/model/course';
 
 export default {
   components: {
     QCardList,
-    QUser
   },
   data () {
     return {
@@ -49,23 +44,4 @@ export default {
 
 <style lang="scss">
 @import '@/assets/scss/main.scss';
-
-.profile-header {
-  border: none;
-  border-bottom: 2px solid #EBEBEB;
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  margin-bottom: 6px;
-
-  &::before {
-    content: '';
-    height: 120px;
-    //background: linear-gradient(90deg, #05869B 0%, #18ACC4 100%);
-    background-image: url(https://static-exp2.licdn.com/sc/h/3chad3rzxalsf65nuo7hxciac);
-    width: 100%;
-    position: absolute;
-  }
-}
-
 </style>

@@ -15,6 +15,7 @@ export default {
   components: {
     QLogo
   },
+  layout: 'login',
   methods: {
     onSignIn(user) {
       LoginService.signIn(user.getBasicProfile());

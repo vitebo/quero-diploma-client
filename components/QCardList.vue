@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <h2 class="card__title">Meus Cursos</h2>
-    <nuxt-link class="add-course nav-link" to="/registering">
+    <nuxt-link class="add-course nav-link" to="/courses/new">
       <svg viewBox="0 0 24 24" width="24px" height="24px" x="0" y="0" preserveAspectRatio="xMinYMin meet" class="artdeco-icon icon"><g class="small-icon" style="fill-opacity: 1" id="plus-icon-small">
         <path d="M14,9H9v5H7V9H2V7H7V2H9V7h5V9Z"></path>
       </g></svg>

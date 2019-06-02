@@ -17,7 +17,9 @@
     <div class="menu" :class="{'menu--show': showMenu}">
       <ul>
         <li>
-          <a href="">Editar</a>
+          <nuxt-link class="nav-link" to="/courses/new">
+            Editar
+          </nuxt-link>
         </li>
         <li>
           <a href="" @click="exit">Sair</a>
@@ -44,7 +46,6 @@ export default {
       this.showMenu = !this.showMenu;
     },
     exit() {
-      const auth2 = gapi.auth2.getAuthInstance();
       LoginService.signOut();
       this.$router.push('/login');
     }

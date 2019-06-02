@@ -1,29 +1,11 @@
 <template>
-  <div>
-    <main>
-      <header class="profile-header card">
-        <q-user />
-      </header>
-      <nuxt />
-    </main>
-  </div>
+  <main>
+    <nuxt />
+  </main>
 </template>
 
 <script>
-import QHeader from '~/components/QHeader.vue';
-import QUser from '~/components/QUser.vue';
-
 export default {
-  components: {
-    QHeader,
-    QUser
-  },
-  async mounted() {
-    const name = localStorage.getItem('name');
-    if (!name) {
-      this.$router.push('/login');
-    }
-  }
 }
 </script>
 
@@ -60,7 +42,7 @@ body {
 }
 
 .profile-header {
-  border: none !important;
+  border: none;
   border-bottom: 2px solid #EBEBEB;
   display: flex;
   width: 100%;

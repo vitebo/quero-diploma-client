@@ -4,29 +4,29 @@
     <form>
       <div class="form-group">
         <label>Universidades</label>
-        <md-autocomplete v-model="selectedCountry" :md-options="countries">
+        <md-autocomplete v-model="selectedInstitution" :md-options="institutions">
         </md-autocomplete>
       </div>
 
       <div class="form-group">
         <label>Cursos</label>
-        <md-autocomplete v-model="selectedEmployee" :md-options="employees" md-dense>
+        <md-autocomplete v-model="selectedCourse" :md-options="courses" md-dense>
         </md-autocomplete>
       </div>
 
       <div class="form-group">
         <label for="exampleInputEmail1">Data de inicio</label>
-        <input type="date" class="">
+        <input v-model="startDate" type="date" class="">
       </div>
 
       <div class="form-group">
         <label for="exampleInputEmail1">Data de fim</label>
-        <input type="date" class="">
+        <input v-model="endDate" type="date" class="">
       </div>
 
       <div class="pos-button">
         <button type="button" class="button button--back" @click="back">Voltar</button>
-        <button type="button" class="button">Salvar</button>
+        <button type="button" class="button" @click="save">Salvar</button>
       </div>
     </form>
 
@@ -34,53 +34,36 @@
 </template>
 
 <script>
-  export default {
-    data () {
-      return {
-        selectedCountry: null,
-        selectedEmployee: null,
-        countries: [
-          'Algeria',
-          'Argentina',
-          'Brazil',
-          'Canada',
-          'Italy',
-          'Japan',
-          'United Kingdom',
-          'United States'
-        ],
-        employees: [
-          'Jim Halpert',
-          'Dwight Schrute',
-          'Michael Scott',
-          'Pam Beesly',
-          'Angela Martin',
-          'Kelly Kapoor',
-          'Ryan Howard',
-          'Kevin Malone',
-          'Creed Bratton',
-          'Oscar Nunez',
-          'Toby Flenderson',
-          'Stanley Hudson',
-          'Meredith Palmer',
-          'Phyllis Lapin-Vance',
-          'Algeria',
-          'Argentina',
-          'Brazil',
-          'Canada',
-          'Italy',
-          'Japan',
-          'United Kingdom',
-          'United States'
-        ]
-      }
+import ProfileService from '../../services/profile_service.js';
+
+export default {
+  data () {
+    return {
+      selectedInstitution: null,
+      selectedCourse: null,
+      institutions: [
+        'Unip',
+        'Estácio',
+        'Anhanguera',
+        'Unopar'
+      ],
+      courses: [
+        'Administração',
+        'Engenharia da Computação'
+      ]
+    }
+  },
+  methods: {
+    back () {
+      this.$router.push('/');
     },
-    methods: {
-      back () {
-        this.$router.push('/');
-      }
+    save () {
+      console.log('saved');
+      ProfileService.createCertification(localStorage.googleId, this.selectedInstitution, this.selectedCourse);
+      this.$router.push('/');
     }
   }
+}
 </script>
 
 <style lang="scss">

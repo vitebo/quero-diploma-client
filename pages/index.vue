@@ -34,6 +34,8 @@ export default {
       }
     );
 
+    console.log(data)
+
     this.courses = data.courses;
   }
 }

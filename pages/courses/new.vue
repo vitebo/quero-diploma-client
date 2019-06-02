@@ -47,6 +47,8 @@ export default {
     return {
       selectedInstitution: null,
       selectedCourse: null,
+      startDate: null,
+      endDate: null,
       institutions: [
         {name: 'Unip', img: 'https://cdn.onlinewebfonts.com/svg/img_311846.png' },
         {name: 'Estácio', img: 'https://cdn.onlinewebfonts.com/svg/img_311846.png' },

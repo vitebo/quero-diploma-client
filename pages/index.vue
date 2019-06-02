@@ -6,11 +6,13 @@
 
 <script>
 import QCardList from '~/components/QCardList.vue';
+import QUser from '~/components/QUser.vue';
 import Course from '~/model/course';
 
 export default {
   components: {
     QCardList,
+    QUser
   },
   data () {
     return {
@@ -28,8 +30,8 @@ export default {
         }
       }
     );
-
-    this.courses = data.courses;
+    console.log(data);
+    this.courses = data;
   }
 }
 </script>

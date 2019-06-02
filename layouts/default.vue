@@ -1,6 +1,6 @@
 <template>
   <div>
-    <main>
+    <main class="main-layout">
       <header class="profile-header card">
         <q-user />
       </header>
@@ -55,6 +55,11 @@ body {
   font-size: 17px;
 }
 
+.main-layout {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
 .header {
   margin-bottom: 6px;
 }
@@ -62,6 +67,7 @@ body {
 .profile-header {
   border: none !important;
   border-bottom: 2px solid #EBEBEB;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 0 2px 3px rgba(0, 0, 0, 0.2);
   display: flex;
   width: 100%;
   flex-direction: row;

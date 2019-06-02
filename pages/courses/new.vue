@@ -521,6 +521,7 @@ export default {
   input {
     width: 100%;
     border: 2px solid rgb(238, 238, 238);
+    background-color: transparent;
     height: 3rem;
     font-weight: normal;
   }

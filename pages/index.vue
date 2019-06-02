@@ -1,30 +1,46 @@
 <template>
-  <div class="container">
-    <h1 class="title">Meus diplomas</h1>
+  <main class="">
+    <header class="profile-header card">
+      <q-user />
+    </header>
     <q-card-list :courses="courses" />
-  </div>
+  </main>
 </template>
 
 <script>
 import QCardList from '~/components/QCardList.vue';
+import QUser from '~/components/QUser.vue';
 import Course from '~/model/course';
 
 export default {
   components: {
-    QCardList
+    QCardList,
+    QUser
   },
   data () {
     return {
       courses: [
-        new Course('ADM', 'curso de administração 1', 'Unip'),
-        new Course('ADM', 'curso de administração 2', 'Unip'),
-        new Course('ADM', 'curso de administração 3', 'Unip'),
-        new Course('ADM', 'curso de administração 4', 'Unip'),
-        new Course('ADM', 'curso de administração 5', 'Unip'),
-        new Course('ADM', 'curso de administração 6', 'Unip'),
-        new Course('ADM', 'curso de administração 7', 'Unip'),
-        new Course('ADM', 'curso de administração 8', 'Unip'),
-        new Course('ADM', 'curso de administração 9', 'Unip'),
+        new Course(
+          'Ciências da Computação',
+          '',
+          'Unip',
+          '11/10/2016',
+          'https://d2my3dgdogz33p.cloudfront.net/logos/colorido/large/25/logo_1489432787.png'
+        ),
+        new Course(
+          'Engenharia de Controle e Automação',
+          '',
+          'Etep',
+          '11/10/2012',
+          'https://d2my3dgdogz33p.cloudfront.net/logos/colorido/large/171/logo_1489433651.png'
+        ),
+        new Course(
+          'Farmácia',
+          '',
+          'Anhanguera',
+          '11/10/2016',
+          'https://d2my3dgdogz33p.cloudfront.net/logos/colorido/large/24/logo_1489432769.png'
+        ),
       ]
     }
   }
@@ -34,7 +50,22 @@ export default {
 <style lang="scss">
 @import '@/assets/scss/main.scss';
 
-.title {
-  margin-bottom: map-get($spacers, 4);
+.profile-header {
+  border: none;
+  border-bottom: 2px solid #EBEBEB;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  margin-bottom: 6px;
+
+  &::before {
+    content: '';
+    height: 120px;
+    //background: linear-gradient(90deg, #05869B 0%, #18ACC4 100%);
+    background-image: url(https://static-exp2.licdn.com/sc/h/3chad3rzxalsf65nuo7hxciac);
+    width: 100%;
+    position: absolute;
+  }
 }
+
 </style>

@@ -13,5 +13,10 @@ export default {
     email = LocalStorage.getItem('email');
 
     return googleId.length() > 0 && name.length() > 0 && imageUrl.length() > 0 && email.length() > 0;
+  },
+
+  signOut() {
+    const auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut();
   }
 }

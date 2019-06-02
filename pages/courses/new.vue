@@ -573,7 +573,7 @@ export default {
 .pos-button {
   display: flex;
   margin-top: 16px;
-  justify-content: space-between;
+  justify-content: flex-end;
   width: 100%;
 }
 
@@ -585,6 +585,7 @@ export default {
   font-weight: bold;
   display: inline-block;
   border: 1px solid rgb(222, 158, 31);
+  margin-left: 16px;
 
   &.button--back {
     color: #05869b;

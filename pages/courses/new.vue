@@ -4,7 +4,13 @@
     <form>
       <div class="form-group">
         <label>Universidades</label>
-        <md-autocomplete v-model="selectedInstitution" :md-options="institutions">
+        <md-autocomplete v-model="value" :md-options="institutions">
+          <template slot="md-autocomplete-item" slot-scope="{ item, term }">
+            <div style="display: flex; align-items: center">
+              <img :src="`${item.img}`" class="img">
+              <md-highlight-text :md-term="term">{{item.name}}</md-highlight-text>
+            </div>
+          </template>
         </md-autocomplete>
       </div>
 
@@ -42,10 +48,10 @@ export default {
       selectedInstitution: null,
       selectedCourse: null,
       institutions: [
-        'Unip',
-        'Estácio',
-        'Anhanguera',
-        'Unopar'
+        {name: 'Unip', img: 'https://cdn.onlinewebfonts.com/svg/img_311846.png' },
+        {name: 'Estácio', img: 'https://cdn.onlinewebfonts.com/svg/img_311846.png' },
+        {name: 'Anhanguera', img: 'https://cdn.onlinewebfonts.com/svg/img_311846.png' },
+        {name: 'Unopar', img: 'https://cdn.onlinewebfonts.com/svg/img_311846.png' },
       ],
       courses: [
         'Administração',
@@ -67,6 +73,13 @@ export default {
 </script>
 
 <style lang="scss">
+.img {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
 .card-autocomplete {
   font-size: 1.5rem;
   padding: 16px;

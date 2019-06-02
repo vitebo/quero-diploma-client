@@ -1,6 +1,6 @@
 <template>
   <div class="card card-autocomplete">
-    <h1 class="card-autocomplete__title">Cadastre um novo curso</h1>
+    <h1 class="card__title">Cadastre um novo curso</h1>
     <form>
       <div class="form-group">
         <label>Universidades</label>
@@ -97,6 +97,13 @@
   margin-bottom: 16px;
 }
 
+.card__title {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 400;
+  color: rgba(0,0,0,0.9);
+}
+
 .form-group {
   label {
     margin-bottom: 0;
@@ -110,6 +117,7 @@
     width: 100%;
     border: 2px solid rgb(238, 238, 238);
     height: 3rem;
+    font-weight: normal;
   }
 }
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container-login">
     <main class="main">
       <q-logo class="logo" />
       <div id="google-signin-btn"></div>
@@ -32,16 +32,17 @@ export default {
 
 <style lang="scss" scoped>
 
-.container {
+.container-login {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  width: 100%;
 }
 
 .main {
   min-height: 500px;
-  min-width: 300px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;

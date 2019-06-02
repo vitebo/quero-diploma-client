@@ -1,68 +1,40 @@
 <template>
-  <section class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        quero-diploma-client
-      </h1>
-      <h2 class="subtitle">
-        My delightful Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >GitHub</a>
-      </div>
-    </div>
-  </section>
+  <div class="container">
+    <h1 class="title">Meus diplomas</h1>
+    <q-card-list :courses="courses" />
+  </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import QCardList from '~/components/QCardList.vue';
+import Course from '~/model/course';
 
 export default {
   components: {
-    Logo
+    QCardList
+  },
+  data () {
+    return {
+      courses: [
+        new Course('ADM', 'curso de administração 1', 'Unip'),
+        new Course('ADM', 'curso de administração 2', 'Unip'),
+        new Course('ADM', 'curso de administração 3', 'Unip'),
+        new Course('ADM', 'curso de administração 4', 'Unip'),
+        new Course('ADM', 'curso de administração 5', 'Unip'),
+        new Course('ADM', 'curso de administração 6', 'Unip'),
+        new Course('ADM', 'curso de administração 7', 'Unip'),
+        new Course('ADM', 'curso de administração 8', 'Unip'),
+        new Course('ADM', 'curso de administração 9', 'Unip'),
+      ]
+    }
   }
 }
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+<style lang="scss">
+@import '@/assets/scss/main.scss';
 
 .title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+  margin-bottom: map-get($spacers, 4);
 }
 </style>

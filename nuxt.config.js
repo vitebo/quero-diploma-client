@@ -30,13 +30,15 @@ export default {
   /*
   ** Global CSS
   */
-  css: [
+  scss: [
+    'assets/scss/main.scss'
   ],
 
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    'plugins/bootstrap-vue.js'
   ],
 
   /*
@@ -46,6 +48,11 @@ export default {
     // Doc: https://bootstrap-vue.js.org/docs/
     'bootstrap-vue/nuxt',
   ],
+
+  bootstrapVue: {
+    bootstrapCSS: false, // Or `css: false`
+    bootstrapVueCSS: false // Or `bvCSS: false`
+  },
 
   /*
   ** Build configuration

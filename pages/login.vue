@@ -2,7 +2,12 @@
   <div class="container-login">
     <main class="main card">
       <q-logo class="logo" />
-      <div id="google-signin-btn"></div>
+      <div class="qcontent">
+        <p class="qtext">O <strong>CarteiraEdu</strong> é o jeito mais fácil de gerenciar e apresentar a sua carteira virtual de diplomas e certificados, validados e chancelados pelas instituições de ensino.</p>
+        <div>
+        </div>
+        <div id="google-signin-btn"></div>
+      </div>
     </main>
   </div>
 </template>
@@ -38,22 +43,21 @@ export default {
   justify-content: center;
   height: 100vh;
   width: 100%;
+  padding-top: 16px;
 }
 
 .main {
-  min-height: 500px;
   width: 100%;
-  display: flex;
   flex-direction: column;
+  display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   background-color: #fff;
-
+  padding: 60px 0 120px 0 !important;
 
   border: none;
   box-shadow: 0 0 0 1px rgba(0,0,0,.15), 0 2px 3px rgba(0,0,0,.2);
   margin-bottom: 0;
-  padding: 16px 0 0 16px;
   border-top: none;
 }
 
@@ -62,5 +66,24 @@ export default {
 }
 
 #google-signin-btn {
+  position: absolute;
+  bottom: 60px;
+}
+
+.qcontent {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  padding: 16px 24px;
+  font-size: 1.6rem;
+  opacity: .9;
+  flex-direction: column;
+}
+
+.qtext {
+  margin-bottom: 32px;
+  line-height: 3rem;
+  font-size: 2.2rem;
+  text-align: center;
 }
 </style>

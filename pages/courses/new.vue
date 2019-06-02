@@ -41,6 +41,8 @@ export default {
     return {
       selectedInstitution: null,
       selectedCourse: null,
+      startDate: null,
+      endDate: null,
       institutions: [
         'Unip',
         'Estácio',

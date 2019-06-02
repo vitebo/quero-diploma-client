@@ -1,5 +1,5 @@
 <template>
-  <a class="logo navbar-brand" href="#">
+  <a class="logo" href="#">
     <div class="logo">
       Carteira <span class="logo__symbol">Edu</span>
     </div>
@@ -18,7 +18,7 @@ export default {
   display: inline-block;
   color: #3d9eae;
   font-weight: bold;
-  font-size: 1.6rem;
+  font-size: 4rem;
 }
 
 .logo__symbol {

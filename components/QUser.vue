@@ -1,11 +1,11 @@
 <template>
   <div class="user">
     <div class="user__photo">
-      <img src="http://lorempixel.com/130/130/people/9" />
+      <img :src="imageUrl" />
     </div>
     <div class="user__info">
-      <strong class="name">Juliana Ladeira</strong>
-      <p class="user-title">Médica do hospital do centro</p>
+      <strong class="name">{{ name }}</strong>
+      <p class="user-title">{{ email }}</p>
       <p class="city">São José dos Campos, São Paulo</p>
       <button class="card__edit" @click="openMenu">
         <svg viewBox="0 0 24 24" width="24px" height="24px" x="0" y="0" preserveAspectRatio="xMinYMin meet" class="artdeco-icon icon"><g class="large-icon" style="fill: currentColor" id="gear-icon-large">
@@ -33,12 +33,18 @@ export default {
   data() {
     return {
       showMenu: false,
+      imageUrl: '',
     }
   },
   methods: {
     openMenu() {
       this.showMenu = !this.showMenu;
     }
+  },
+  mounted() {
+    this.imageUrl = localStorage.getItem('imageUrl');
+    this.name = localStorage.getItem('name');
+    this.email = localStorage.getItem('email');
   }
 }
 </script>
@@ -63,10 +69,10 @@ export default {
   align-items: center;
   justify-content: center;
   text-align: center;
-  height: 130px;
-  width: 130px;
+  height: 96px;
+  width: 96px;
   overflow: hidden;
-  margin-bottom: 16px;
+  margin: 32px auto 16px auto;
 }
 
 .user__info {

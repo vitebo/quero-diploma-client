@@ -41,6 +41,7 @@
 
 <script>
 import ProfileService from '../../services/profile_service.js';
+import Courses from '~/services/courses.js';
 
 export default {
   data () {
@@ -55,10 +56,7 @@ export default {
         {name: 'Anhanguera', img: 'https://cdn.onlinewebfonts.com/svg/img_311846.png' },
         {name: 'Unopar', img: 'https://cdn.onlinewebfonts.com/svg/img_311846.png' },
       ],
-      courses: [
-        'Administração',
-        'Engenharia da Computação'
-      ]
+      courses: Courses.courses(),
     }
   },
   methods: {

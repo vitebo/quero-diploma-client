@@ -28,8 +28,8 @@ export default {
         }
       }
     );
-
-    this.courses = data.courses;
+    console.log(data);
+    this.courses = data;
   }
 }
 </script>

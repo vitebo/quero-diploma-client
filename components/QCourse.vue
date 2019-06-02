@@ -1,15 +1,21 @@
 <template>
   <div class="qcard">
     <header class="qcard__header">
-      <img class="qcard__image" :src="course.logo_url" />
+      <img class="qcard__image" :src="urlLogo" />
     </header>
     <div class="qcard__body">
       <h5 class="qcard__title">{{ course.course_name }}</h5>
       <h6 class="qcard__subtitle">{{ course.name }}</h6>
       <p class="qcard__time">{{ course.conclusion }}</p>
       <p class="qcard__status">
-        verificado
-        <i class="qcard__status-icon fas fa-check"></i>
+        <div v-if="course.is_validated">
+          verificado
+          <i class="qcard__status-icon fas fa-check"></i>
+        </div>
+        <div v-if="!course.is_validated">
+          Pendente
+          <i class="qcard__status-icon fas fa-check"></i>
+        </div>
       </p>
     </div>
     <button type="button" class="qcard__edit" @click="edit">
@@ -30,6 +36,17 @@ export default {
       edit() {
         this.$router.push('/login');
       }
+    }
+  },
+  methods: {
+    getLogo(url) {
+      console.log(url);
+      return `/assets/${url}`;
+    }
+  },
+  computed: {
+    urlLogo() {
+      return `/assets/${this.course.school_logo}`;
     }
   }
 }

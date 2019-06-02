@@ -6,7 +6,7 @@
     <div class="user__info">
       <strong class="name">{{ name }}</strong>
       <p class="user-title">{{ email }}</p>
-      <p class="city">{{ address }}</p>
+      <p class="city">São José dos Campos, SP</p>
       <button class="card__edit" @click="openMenu">
         <svg viewBox="0 0 24 24" width="24px" height="24px" x="0" y="0" preserveAspectRatio="xMinYMin meet" class="artdeco-icon icon"><g class="large-icon" style="fill: currentColor" id="gear-icon-large">
           <path d="M12,9a3,3,0,1,0,3,3A3,3,0,0,0,12,9Zm0,5.13A2.13,2.13,0,1,1,14.12,12,2.12,2.12,0,0,1,12,14.13Zm7.91-2.87L22,9.38,19.26,4.62,16.6,5.5a1,1,0,0,1-1.29-.75L14.74,2H9.26L8.69,4.75A1,1,0,0,1,7.4,5.5L4.74,4.62,2,9.38l2.09,1.87a1,1,0,0,1,0,1.49L2,14.62l2.74,4.76L7.4,18.5a1,1,0,0,1,1.29.75L9.26,22h5.48l0.57-2.75a1,1,0,0,1,1.29-.75l2.66,0.88L22,14.62l-2.09-1.87A1,1,0,0,1,19.91,11.25ZM18.4,17.12l-1.22-.4a2.86,2.86,0,0,0-3.7,2.14l-0.26,1.26H10.78l-0.26-1.26a2.86,2.86,0,0,0-3.7-2.14l-1.22.4L4.38,15l1-.86a2.88,2.88,0,0,0,0-4.29L4.38,9,5.6,6.88l1.22,0.4a2.86,2.86,0,0,0,3.7-2.14l0.26-1.26h2.44l0.26,1.26a2.86,2.86,0,0,0,3.7,2.14l1.22-.4L19.62,9l-1,.86a2.88,2.88,0,0,0,0,4.29l1,0.86Z"></path>
@@ -39,7 +39,6 @@ export default {
       imageUrl: '',
       name: '',
       email: '',
-      address: ''
     }
   },
   methods: {
@@ -55,18 +54,6 @@ export default {
     this.imageUrl = localStorage.getItem('imageUrl');
     this.name = localStorage.getItem('name');
     this.email = localStorage.getItem('email');
-
-    const { data } = await this.$axios.get(
-      'http://ec2-18-217-117-80.us-east-2.compute.amazonaws.com/cards/show?google_id=104197408546369361824',
-      {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-          'Content-Type': 'application/json',
-        }
-      }
-    );
-
-    this.address = data.address;
   }
 }
 </script>

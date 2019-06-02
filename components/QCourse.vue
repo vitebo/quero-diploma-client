@@ -7,6 +7,7 @@
       <h5 class="qcard__title">{{ course.course_name }}</h5>
       <h6 class="qcard__subtitle">{{ course.scholl }}</h6>
       <p class="qcard__time">{{ course.conclusion }}</p>
+      <p class="qcard__time">{{ course.school }}</p>
       <p class="qcard__status">
         <div v-if="course.is_validated">
           verificado

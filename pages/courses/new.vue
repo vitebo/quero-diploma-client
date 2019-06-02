@@ -119,6 +119,7 @@ export default {
   input {
     width: 100%;
     border: 2px solid rgb(238, 238, 238);
+    background-color: transparent;
     height: 3rem;
     font-weight: normal;
   }
@@ -147,6 +148,7 @@ export default {
 }
 
 .md-list-item {
+  transition: 250ms background-color 250ms;
 
   button {
     width: 100%;
@@ -156,6 +158,10 @@ export default {
     background-color: transparent;
     font-size: 1.4rem;
     padding: 8px;
+  }
+
+  &:hover {
+    background-color: #eee;
   }
 }
 
@@ -170,7 +176,7 @@ export default {
 .pos-button {
   display: flex;
   margin-top: 16px;
-  justify-content: space-between;
+  justify-content: flex-end;
   width: 100%;
 }
 
@@ -182,6 +188,7 @@ export default {
   font-weight: bold;
   display: inline-block;
   border: 1px solid rgb(222, 158, 31);
+  margin-left: 16px;
 
   &.button--back {
     color: #05869b;

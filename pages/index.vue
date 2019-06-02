@@ -21,8 +21,9 @@ export default {
     }
   },
   async mounted() {
+    const googleid = localStorage.getItem('googleId');
     const { data } = await this.$axios.get(
-      'http://ec2-18-217-117-80.us-east-2.compute.amazonaws.com/cards/show?google_id=104197408546369361824',
+      `http://ec2-18-217-117-80.us-east-2.compute.amazonaws.com/cards/show?google_id=${googleid}`,
       {
         headers: {
           "Access-Control-Allow-Origin": "*",
@@ -30,8 +31,8 @@ export default {
         }
       }
     );
-    console.log(data);
     this.courses = data;
+    console.log(data);
   }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div class="container-login">
-    <main class="main">
+    <main class="main card">
       <q-logo class="logo" />
       <div id="google-signin-btn"></div>
     </main>
@@ -34,7 +34,7 @@ export default {
 
 .container-login {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   height: 100vh;
   width: 100%;
@@ -48,7 +48,13 @@ export default {
   align-items: center;
   justify-content: center;
   background-color: #fff;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+
+
+  border: none;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.15), 0 2px 3px rgba(0,0,0,.2);
+  margin-bottom: 0;
+  padding: 16px 0 0 16px;
+  border-top: none;
 }
 
 .logo {

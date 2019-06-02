@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="login-layout">
     <nuxt />
   </main>
 </template>
@@ -35,5 +35,10 @@ body {
   background-color: #e1e9ee !important;
   overflow-x: hidden;
   font-size: 17px;
+}
+
+.login-layout {
+  max-width: 480px;
+  margin: 0 auto;
 }
 </style>

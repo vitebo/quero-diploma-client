@@ -43,7 +43,6 @@ export default {
   },
   methods: {
     getLogo(url) {
-      console.log(url);
       return `/assets/${url}`;
     }
   },

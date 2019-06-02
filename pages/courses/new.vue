@@ -4,24 +4,24 @@
     <form>
       <div class="form-group">
         <label>Universidades</label>
-        <md-autocomplete v-model="university" :md-options="countries">
+        <md-autocomplete v-model="selectedInstitution" :md-options="institutions">
         </md-autocomplete>
       </div>
 
       <div class="form-group">
         <label>Cursos</label>
-        <md-autocomplete v-model="courses" :md-options="employees" md-dense>
+        <md-autocomplete v-model="selectedCourse" :md-options="courses" md-dense>
         </md-autocomplete>
       </div>
 
       <div class="form-group">
         <label for="exampleInputEmail1">Data de inicio</label>
-        <input type="date" v-model="startDate" class="">
+        <input v-model="startDate" type="date" class="">
       </div>
 
       <div class="form-group">
         <label for="exampleInputEmail1">Data de fim</label>
-        <input type="date" v-model="endDate" class="">
+        <input v-model="endDate" type="date" class="">
       </div>
 
       <div class="pos-button">
@@ -34,58 +34,36 @@
 </template>
 
 <script>
-  export default {
-    data () {
-      return {
-        university: null,
-        courses: null,
-        startDate: null,
-        endDate: null,
-        countries: [
-          'Algeria',
-          'Argentina',
-          'Brazil',
-          'Canada',
-          'Italy',
-          'Japan',
-          'United Kingdom',
-          'United States'
-        ],
-        employees: [
-          'Jim Halpert',
-          'Dwight Schrute',
-          'Michael Scott',
-          'Pam Beesly',
-          'Angela Martin',
-          'Kelly Kapoor',
-          'Ryan Howard',
-          'Kevin Malone',
-          'Creed Bratton',
-          'Oscar Nunez',
-          'Toby Flenderson',
-          'Stanley Hudson',
-          'Meredith Palmer',
-          'Phyllis Lapin-Vance',
-          'Algeria',
-          'Argentina',
-          'Brazil',
-          'Canada',
-          'Italy',
-          'Japan',
-          'United Kingdom',
-          'United States'
-        ]
-      }
+import ProfileService from '../../services/profile_service.js';
+
+export default {
+  data () {
+    return {
+      selectedInstitution: null,
+      selectedCourse: null,
+      institutions: [
+        'Unip',
+        'Estácio',
+        'Anhanguera',
+        'Unopar'
+      ],
+      courses: [
+        'Administração',
+        'Engenharia da Computação'
+      ]
+    }
+  },
+  methods: {
+    back () {
+      this.$router.push('/');
     },
-    methods: {
-      back () {
-        this.$router.push('/');
-      },
-      save() {
-        fetch('', { method: 'POST' }); 
-      }
+    save () {
+      console.log('saved');
+      ProfileService.createCertification(localStorage.googleId, this.selectedInstitution, this.selectedCourse);
+      this.$router.push('/');
     }
   }
+}
 </script>
 
 <style lang="scss">

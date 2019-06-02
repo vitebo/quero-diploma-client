@@ -61,8 +61,8 @@ export default {
   &::before {
     content: '';
     height: 120px;
-    background: linear-gradient(90deg, #05869B 0%, #18ACC4 100%);
-    //background-image: url(https://static-exp2.licdn.com/sc/h/3chad3rzxalsf65nuo7hxciac);
+    //background: linear-gradient(90deg, #05869B 0%, #18ACC4 100%);
+    background-image: url(https://static-exp2.licdn.com/sc/h/3chad3rzxalsf65nuo7hxciac);
     width: 100%;
     position: absolute;
   }

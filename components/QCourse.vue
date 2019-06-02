@@ -5,16 +5,19 @@
     </header>
     <div class="qcard__body">
       <h5 class="qcard__title">{{ course.course_name }}</h5>
-      <h6 class="qcard__subtitle">{{ course.scholl }}</h6>
+      <h6 class="qcard__subtitle">{{ course.school }}</h6>
       <p class="qcard__time">{{ course.conclusion }}</p>
-      <p class="qcard__status">
-        <div v-if="course.is_validated">
-          verificado
+        <div v-if="course.is_validated" class="groupgroup">
+          <p class="qcard__status">
+            verificado
+          </p>
           <i class="qcard__status-icon fas fa-check"></i>
         </div>
-        <div v-if="!course.is_validated">
-          Pendente
-          <i class="qcard__status-icon--time far fa-clock"></i>
+        <div v-if="!course.is_validated" class="groupgroup">
+          <p class="qcard__status">
+            Pendente
+          </p>
+          <i class="qcard__status-icon qcard__status-icon--time far fa-clock"></i>
         </div>
       </p>
     </div>
@@ -55,8 +58,13 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/scss/main.scss';
 
-.qcard {
+.groupgroup {
   align-items: center;
+  display: flex;
+}
+
+.qcard {
+  align-items: flex-start;
   display: flex;
   flex-direction: row !important;
   margin-bottom: map-get($spacers, 3);
@@ -77,7 +85,7 @@ export default {
 }
 
 .qcard__title {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: bold;
 }
 
@@ -92,7 +100,7 @@ export default {
 }
 
 .qcard__status {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   color: rgba(0,0,0,0.6);
   display: flex;
   align-items: center;
@@ -103,6 +111,7 @@ export default {
   color: #10C979;
   display: inline-block;
   margin-top: 2px;
+  margin-left: 8px;
 }
 
 .qcard__body {

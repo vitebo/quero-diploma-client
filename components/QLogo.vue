@@ -18,6 +18,7 @@ export default {
   display: inline-block;
   color: #3d9eae;
   font-weight: bold;
+  font-size: 1.6rem;
 }
 
 .logo__symbol {

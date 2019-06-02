@@ -1,25 +1,24 @@
 <template>
-  <section class="row">
-    <div class="course-col col-6" v-for="course in courses">
-      <q-card :course="course" />
+  <div class="card">
+    <h2 class="card__title">Meus Cursos</h2>
+    <nuxt-link class="add-course nav-link" to="/registering">
+      <svg viewBox="0 0 24 24" width="24px" height="24px" x="0" y="0" preserveAspectRatio="xMinYMin meet" class="artdeco-icon icon"><g class="small-icon" style="fill-opacity: 1" id="plus-icon-small">
+        <path d="M14,9H9v5H7V9H2V7H7V2H9V7h5V9Z"></path>
+      </g></svg>
+      Adicionar curso
+    </nuxt-link>
+    <div class="course-col" v-for="course in courses">
+      <q-course :course="course" />
     </div>
-    <div class="course-col col-6">
-      <div class="empty-card">
-        <button class="empty-card__button">
-          Adicionar um novo curso
-          <i class="empty-card__icon fas fa-plus"></i>
-        </button>
-      </div>
-    </div>
-  </section>
+  </div>
 </template>
 
 <script>
-import QCard from '~/components/QCard.vue';
+import QCourse from '~/components/QCourse.vue';
 
 export default {
   components: {
-    QCard
+    QCourse
   },
   props: [ 'courses' ],
 }
@@ -29,41 +28,36 @@ export default {
 @import '@/assets/scss/main.scss';
 
 .course-col {
-  margin-bottom: map-get($spacers, 4);
+  margin-bottom: 8px;
 }
 
 .card {
-  height: 100%;
-}
-
-.empty-card {
-  color: #575757;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-}
-
-.empty-card__button {
-  background-color: transparent;
   border: none;
-
-  &:hover {
-    .empty-card__icon {
-      transform: scale(1.2);
-    }
-  }
+  box-shadow: 0 0 0 1px rgba(0,0,0,.15), 0 2px 3px rgba(0,0,0,.2);
+  margin-bottom: 0;
+  padding: 16px 0 0 16px;
+  border-top: 1px solid rgba(0,0,0,0.15);
+;
 }
 
-.empty-card__icon {
-  color: #fff;
-  background-color: #3d9eae;
-  padding: map-get($spacers, 2);
-  border-radius: 50%;
-  font-size: 18px;
-  margin-left: map-get($spacers, 2);
-  transition: transform 250ms ease;
+.card__title {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 400;
+  color: rgba(0,0,0,0.9);
+}
+
+.add-course {
+  color: #0073b1;
+  font-weight: bold;
+  font-size: 1.4rem;
+  padding: 12px 0;
+
+  svg {
+    fill: #0073b1;
+    margin-right: -8px;
+    margin-bottom: -4px;
+  }
 }
 </style>
 

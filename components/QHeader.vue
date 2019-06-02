@@ -45,9 +45,13 @@ export default {
 
 .nav-link {
   color: #3d9eae;
+
+  &:hover {
+    color: #3d9eae !important;
+  }
 }
 
-.nuxt-link-active {
+.nuxt-link-exact-active {
   font-weight: bold;
 }
 </style>

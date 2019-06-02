@@ -20,7 +20,7 @@
           <a href="">Editar</a>
         </li>
         <li>
-          <a href="">Sair</a>
+          <a href="" @click="exit">Sair</a>
         </li>
       </ul>
     </div>
@@ -28,17 +28,25 @@
 </template>
 
 <script>
+import LoginService from '../services/login_service.js';
 
 export default {
   data() {
     return {
       showMenu: false,
       imageUrl: '',
+      name: '',
+      email: '',
     }
   },
   methods: {
     openMenu() {
       this.showMenu = !this.showMenu;
+    },
+    exit() {
+      const auth2 = gapi.auth2.getAuthInstance();
+      LoginService.signOut();
+      this.$router.push('/login');
     }
   },
   mounted() {

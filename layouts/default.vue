@@ -8,11 +8,16 @@
 
 <script>
 import QHeader from '~/components/QHeader.vue';
-import '@/assets/scss/main.scss';
 
 export default {
   components: {
     QHeader
+  },
+  mounted() {
+    const googleid = localStorage.getItem('googleid');
+    if (!googleid) {
+      this.$router.push('/login');
+    }
   }
 }
 </script>

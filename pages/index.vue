@@ -20,29 +20,21 @@ export default {
   data () {
     return {
       courses: [
-        new Course(
-          'Ciências da Computação',
-          '',
-          'Unip',
-          '11/10/2016',
-          'https://d2my3dgdogz33p.cloudfront.net/logos/colorido/large/25/logo_1489432787.png'
-        ),
-        new Course(
-          'Engenharia de Controle e Automação',
-          '',
-          'Etep',
-          '11/10/2012',
-          'https://d2my3dgdogz33p.cloudfront.net/logos/colorido/large/171/logo_1489433651.png'
-        ),
-        new Course(
-          'Farmácia',
-          '',
-          'Anhanguera',
-          '11/10/2016',
-          'https://d2my3dgdogz33p.cloudfront.net/logos/colorido/large/24/logo_1489432769.png'
-        ),
-      ]
+      ],
     }
+  },
+  async mounted() {
+    const { data } = await this.$axios.get(
+      'http://ec2-18-217-117-80.us-east-2.compute.amazonaws.com/cards/show?google_id=104197408546369361824',
+      {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          'Content-Type': 'application/json',
+        }
+      }
+    );
+
+    this.courses = data.courses;
   }
 }
 </script>

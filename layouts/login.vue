@@ -1,29 +1,11 @@
 <template>
-  <div>
-    <main>
-      <header class="profile-header card">
-        <q-user />
-      </header>
-      <nuxt />
-    </main>
-  </div>
+  <main>
+    <nuxt />
+  </main>
 </template>
 
 <script>
-import QHeader from '~/components/QHeader.vue';
-import QUser from '~/components/QUser.vue';
-
 export default {
-  components: {
-    QHeader,
-    QUser
-  },
-  async mounted() {
-    const name = localStorage.getItem('name');
-    if (!name) {
-      this.$router.push('/login');
-    }
-  }
 }
 </script>
 
@@ -53,28 +35,5 @@ body {
   background-color: #e1e9ee !important;
   overflow-x: hidden;
   font-size: 17px;
-}
-
-.header {
-  margin-bottom: 6px;
-}
-
-.profile-header {
-  border: none !important;
-  border-bottom: 2px solid #EBEBEB;
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  margin-bottom: 6px;
-
-  &::before {
-    content: '';
-    height: 120px;
-    //background: linear-gradient(90deg, #05869B 0%, #18ACC4 100%);
-    //background: linear-gradient(90deg, #dd9f05 0%, #fdb914 100%);
-    background-image: url(https://static-exp2.licdn.com/sc/h/3chad3rzxalsf65nuo7hxciac);
-    width: 100%;
-    position: absolute;
-  }
 }
 </style>

@@ -5,7 +5,7 @@
     </header>
     <div class="qcard__body">
       <h5 class="qcard__title">{{ course.course_name }}</h5>
-      <h6 class="qcard__subtitle">{{ course.scholl }}</h6>
+      <h6 class="qcard__subtitle">{{ course.school }}</h6>
       <p class="qcard__time">{{ course.conclusion }}</p>
         <div v-if="course.is_validated" class="groupgroup">
           <p class="qcard__status">

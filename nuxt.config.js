@@ -48,7 +48,24 @@ export default {
   modules: [
     // Doc: https://bootstrap-vue.js.org/docs/
     'bootstrap-vue/nuxt',
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy'
   ],
+
+  axios: {
+    baseURL: 'http://ec2-18-217-117-80.us-east-2.compute.amazonaws.com',
+    proxyHeaders: false,
+    credentials: false
+  },
+
+  proxy: {
+    '/api': {
+      target: 'http://example.com',
+      pathRewrite: {
+        '^/api' : '/'
+      }
+    }
+  },
 
   bootstrapVue: {
     bootstrapCSS: false, // Or `css: false`

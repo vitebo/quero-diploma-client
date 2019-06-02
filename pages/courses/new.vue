@@ -4,29 +4,29 @@
     <form>
       <div class="form-group">
         <label>Universidades</label>
-        <md-autocomplete v-model="selectedCountry" :md-options="countries">
+        <md-autocomplete v-model="university" :md-options="countries">
         </md-autocomplete>
       </div>
 
       <div class="form-group">
         <label>Cursos</label>
-        <md-autocomplete v-model="selectedEmployee" :md-options="employees" md-dense>
+        <md-autocomplete v-model="courses" :md-options="employees" md-dense>
         </md-autocomplete>
       </div>
 
       <div class="form-group">
         <label for="exampleInputEmail1">Data de inicio</label>
-        <input type="date" class="">
+        <input type="date" v-model="startDate" class="">
       </div>
 
       <div class="form-group">
         <label for="exampleInputEmail1">Data de fim</label>
-        <input type="date" class="">
+        <input type="date" v-model="endDate" class="">
       </div>
 
       <div class="pos-button">
         <button type="button" class="button button--back" @click="back">Voltar</button>
-        <button type="button" class="button">Salvar</button>
+        <button type="button" class="button" @click="save">Salvar</button>
       </div>
     </form>
 
@@ -37,8 +37,10 @@
   export default {
     data () {
       return {
-        selectedCountry: null,
-        selectedEmployee: null,
+        university: null,
+        courses: null,
+        startDate: null,
+        endDate: null,
         countries: [
           'Algeria',
           'Argentina',
@@ -78,6 +80,9 @@
     methods: {
       back () {
         this.$router.push('/');
+      },
+      save() {
+        fetch('', { method: 'POST' }); 
       }
     }
   }

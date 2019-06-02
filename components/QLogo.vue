@@ -18,7 +18,7 @@ export default {
   display: inline-block;
   color: #3d9eae;
   font-weight: bold;
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 .logo__symbol {
@@ -28,5 +28,4 @@ export default {
   padding: map-get($spacers, 2);
   font-weight: lighter;
 }
-
 </style>
